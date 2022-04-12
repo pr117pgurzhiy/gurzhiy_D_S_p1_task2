@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="user8Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="edizm">
+    <Key>
+      <PropertyRef Name="id_едизм" />
+    </Key>
+    <Property Name="id_едизм" Type="int" Nullable="false" />
+    <Property Name="Единица_измерения" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kategoriitov">
+    <Key>
+      <PropertyRef Name="id категории_товара" />
+    </Key>
+    <Property Name="id категории_товара" Type="int" Nullable="false" />
+    <Property Name="Категория товара" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderproduct">
+    <Key>
+      <PropertyRef Name="id_orderproduct" />
+    </Key>
+    <Property Name="id_orderproduct" Type="int" Nullable="false" />
+    <Property Name="id_заказа" Type="int" Nullable="false" />
+    <Property Name="id_producta" Type="int" Nullable="false" />
+    <Property Name="Количество" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="postavchiki">
+    <Key>
+      <PropertyRef Name="id_поставщика" />
+    </Key>
+    <Property Name="id_поставщика" Type="int" Nullable="false" />
+    <Property Name="Поставщик" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="proizv">
+    <Key>
+      <PropertyRef Name="id производителя" />
+    </Key>
+    <Property Name="id производителя" Type="int" Nullable="false" />
+    <Property Name="Производитель" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="punktyvydachi">
+    <Key>
+      <PropertyRef Name="id_пункта_выдачи" />
+    </Key>
+    <Property Name="id_пункта_выдачи" Type="int" Nullable="false" />
+    <Property Name="Адрес_ПВ" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id_роли" />
+    </Key>
+    <Property Name="id_роли" Type="int" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="statuszak">
+    <Key>
+      <PropertyRef Name="id_status_zak" />
+    </Key>
+    <Property Name="id_status_zak" Type="int" Nullable="false" />
+    <Property Name="Статус_заказа" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tovary">
+    <Key>
+      <PropertyRef Name="id_товара" />
+    </Key>
+    <Property Name="id_товара" Type="int" Nullable="false" />
+    <Property Name="Артикул" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="код_единицы_измерения" Type="int" Nullable="false" />
+    <Property Name="Стоимость" Type="int" Nullable="false" />
+    <Property Name="Размер_максимально_возможной_скидки" Type="int" Nullable="false" />
+    <Property Name="Код_производителя" Type="int" Nullable="false" />
+    <Property Name="Код_поставщика" Type="int" Nullable="false" />
+    <Property Name="Код_категории_товара" Type="int" Nullable="false" />
+    <Property Name="Действующая_скидка" Type="int" Nullable="false" />
+    <Property Name="Кол_во_на_складе" Type="int" Nullable="false" />
+    <Property Name="Описание" Type="nvarchar" MaxLength="100" />
+    <Property Name="Изображение" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="varbinary(max)" />
+    <Property Name="enable" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id_пользователя" />
+    </Key>
+    <Property Name="id_пользователя" Type="int" Nullable="false" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="отчество" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Код_роли" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="zakazy">
+    <Key>
+      <PropertyRef Name="Номер_заказа" />
+    </Key>
+    <Property Name="Номер_заказа" Type="int" Nullable="false" />
+    <Property Name="Состав_заказа" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Дата_заказа" Type="date" Nullable="false" />
+    <Property Name="Дата_доставки" Type="date" Nullable="false" />
+    <Property Name="Пункт_выдачи" Type="int" Nullable="false" />
+    <Property Name="ФИО_клиента" Type="nvarchar" MaxLength="50" />
+    <Property Name="Код_для_получения" Type="int" Nullable="false" />
+    <Property Name="код_статуса_заказа" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_orderproduct_tovary">
+    <End Role="tovary" Type="Self.tovary" Multiplicity="1" />
+    <End Role="orderproduct" Type="Self.orderproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tovary">
+        <PropertyRef Name="id_товара" />
+      </Principal>
+      <Dependent Role="orderproduct">
+        <PropertyRef Name="id_producta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderproduct_zakazy">
+    <End Role="zakazy" Type="Self.zakazy" Multiplicity="1" />
+    <End Role="orderproduct" Type="Self.orderproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="zakazy">
+        <PropertyRef Name="Номер_заказа" />
+      </Principal>
+      <Dependent Role="orderproduct">
+        <PropertyRef Name="id_заказа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tovary_edizm">
+    <End Role="edizm" Type="Self.edizm" Multiplicity="1" />
+    <End Role="tovary" Type="Self.tovary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="edizm">
+        <PropertyRef Name="id_едизм" />
+      </Principal>
+      <Dependent Role="tovary">
+        <PropertyRef Name="код_единицы_измерения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tovary_kategoriitov">
+    <End Role="kategoriitov" Type="Self.kategoriitov" Multiplicity="1" />
+    <End Role="tovary" Type="Self.tovary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategoriitov">
+        <PropertyRef Name="id категории_товара" />
+      </Principal>
+      <Dependent Role="tovary">
+        <PropertyRef Name="Код_категории_товара" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tovary_postavchiki">
+    <End Role="postavchiki" Type="Self.postavchiki" Multiplicity="1" />
+    <End Role="tovary" Type="Self.tovary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="postavchiki">
+        <PropertyRef Name="id_поставщика" />
+      </Principal>
+      <Dependent Role="tovary">
+        <PropertyRef Name="Код_поставщика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tovary_proizv">
+    <End Role="proizv" Type="Self.proizv" Multiplicity="1" />
+    <End Role="tovary" Type="Self.tovary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proizv">
+        <PropertyRef Name="id производителя" />
+      </Principal>
+      <Dependent Role="tovary">
+        <PropertyRef Name="Код_производителя" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_roles">
+    <End Role="roles" Type="Self.roles" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id_роли" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="Код_роли" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zakazy_punktyvydachi">
+    <End Role="punktyvydachi" Type="Self.punktyvydachi" Multiplicity="1" />
+    <End Role="zakazy" Type="Self.zakazy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="punktyvydachi">
+        <PropertyRef Name="id_пункта_выдачи" />
+      </Principal>
+      <Dependent Role="zakazy">
+        <PropertyRef Name="Пункт_выдачи" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_zakazy_statuszak">
+    <End Role="statuszak" Type="Self.statuszak" Multiplicity="1" />
+    <End Role="zakazy" Type="Self.zakazy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="statuszak">
+        <PropertyRef Name="id_status_zak" />
+      </Principal>
+      <Dependent Role="zakazy">
+        <PropertyRef Name="код_статуса_заказа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="user8ModelStoreContainer">
+    <EntitySet Name="edizm" EntityType="Self.edizm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategoriitov" EntityType="Self.kategoriitov" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="orderproduct" EntityType="Self.orderproduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="postavchiki" EntityType="Self.postavchiki" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proizv" EntityType="Self.proizv" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="punktyvydachi" EntityType="Self.punktyvydachi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="statuszak" EntityType="Self.statuszak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tovary" EntityType="Self.tovary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="zakazy" EntityType="Self.zakazy" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_orderproduct_tovary" Association="Self.FK_orderproduct_tovary">
+      <End Role="tovary" EntitySet="tovary" />
+      <End Role="orderproduct" EntitySet="orderproduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orderproduct_zakazy" Association="Self.FK_orderproduct_zakazy">
+      <End Role="zakazy" EntitySet="zakazy" />
+      <End Role="orderproduct" EntitySet="orderproduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tovary_edizm" Association="Self.FK_tovary_edizm">
+      <End Role="edizm" EntitySet="edizm" />
+      <End Role="tovary" EntitySet="tovary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tovary_kategoriitov" Association="Self.FK_tovary_kategoriitov">
+      <End Role="kategoriitov" EntitySet="kategoriitov" />
+      <End Role="tovary" EntitySet="tovary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tovary_postavchiki" Association="Self.FK_tovary_postavchiki">
+      <End Role="postavchiki" EntitySet="postavchiki" />
+      <End Role="tovary" EntitySet="tovary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tovary_proizv" Association="Self.FK_tovary_proizv">
+      <End Role="proizv" EntitySet="proizv" />
+      <End Role="tovary" EntitySet="tovary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_roles" Association="Self.FK_users_roles">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zakazy_punktyvydachi" Association="Self.FK_zakazy_punktyvydachi">
+      <End Role="punktyvydachi" EntitySet="punktyvydachi" />
+      <End Role="zakazy" EntitySet="zakazy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_zakazy_statuszak" Association="Self.FK_zakazy_statuszak">
+      <End Role="statuszak" EntitySet="statuszak" />
+      <End Role="zakazy" EntitySet="zakazy" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

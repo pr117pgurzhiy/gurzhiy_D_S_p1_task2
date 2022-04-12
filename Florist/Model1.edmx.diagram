@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cbd446683a33458e94d573ca2a6e0b5b" Name="Diagram1">
+        <EntityTypeShape EntityType="user8Model.edizm" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.kategoriitov" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.orderproduct" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.postavchiki" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.proizv" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.punktyvydachi" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.roles" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.statuszak" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.tovary" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.users" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="user8Model.zakazy" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="user8Model.FK_tovary_edizm" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_tovary_kategoriitov" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_orderproduct_tovary" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_orderproduct_zakazy" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_tovary_postavchiki" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_tovary_proizv" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_zakazy_punktyvydachi" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_users_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="user8Model.FK_zakazy_statuszak" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
